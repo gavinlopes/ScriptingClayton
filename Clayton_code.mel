@@ -1,0 +1,15 @@
+proc float[] OrderNums(float $numbers[])
+{
+	float $ordered[];
+	$ordered = `sort $numbers`;
+
+	return $ordered;
+}
+
+OrderNums ({ 4, 3, 8, 9, -4, -2, 0, 3, 75 });
+
+for($i=0; $i<10; $i++)
+{
+    print($i + "\n");
+}
+
