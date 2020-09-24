@@ -1,0 +1,48 @@
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 0.91345 0 ;
+
+polySphere -r .8 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 2.126889 0 ;
+
+polySphere -r .6 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 3.382366 0 ;
+
+polyCylinder -r .8 -h .05 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r 0 3.879868 0 ;
+
+select -cl  ;
+select -tgl pCylinder1.f[56] ;
+select -tgl pCylinder1.f[55] ;
+select -tgl pCylinder1.f[54] ;
+select -tgl pCylinder1.f[53] ;
+select -tgl pCylinder1.f[52] ;
+select -tgl pCylinder1.f[51] ;
+select -tgl pCylinder1.f[50] ;
+select -tgl pCylinder1.f[49] ;
+select -tgl pCylinder1.f[48] ;
+select -tgl pCylinder1.f[47] ;
+select -tgl pCylinder1.f[46] ;
+select -tgl pCylinder1.f[45] ;
+select -tgl pCylinder1.f[44] ;
+select -tgl pCylinder1.f[43] ;
+select -tgl pCylinder1.f[42] ;
+select -tgl pCylinder1.f[41] ;
+select -tgl pCylinder1.f[40] ;
+select -tgl pCylinder1.f[59] ;
+select -tgl pCylinder1.f[58] ;
+select -tgl pCylinder1.f[57] ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -8.940696716e-08 -pvy 3.904868 -pvz -1.192092896e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder1.f[40:59];
+// Result: polyExtrudeFace1 // 
+scale -r -p -8.9407e-08cm 3.904868cm -1.19209e-07cm 0.613539 0.613539 0.613539 ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -8.940696716e-08 -pvy 3.904868095 -pvz -1.192092896e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder1.f[40:59];
+// Result: polyExtrudeFace2 // 
+setAttr "polyExtrudeFace2.localTranslate" -type double3 0 0 0.824395 ;
+
+polyCone -r .04 -h .5 -sx 20 -sy 1 -sz 0 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+rotate -r -os -fo 90 0 0 ;
+move -r 0 3.38254 0 ;
+move -r 0 0 0.822412 ;
+
+select -r pCylinder1 pSphere9 pSphere8 pCone3 pCylinder3 pCylinder2 pSphere6 pSphere5 pSphere7 pCone2 pSphere4 pSphere1 pSphere3 pSphere2 ;
+doGroup 0 1 1;
+

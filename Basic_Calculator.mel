@@ -1,0 +1,35 @@
+proc float AddNumbers(float $num1, float $num2)
+{
+    float $sum;
+    $sum = $num1 + $num2;
+    return $sum;
+}
+
+AddNumbers(400,60);
+
+proc float SubNumbers(float $num1, float $num2)
+{
+    float $sum;
+    $sum = $num1 - $num2;
+    return $sum;
+}
+
+SubNumbers(400,60);
+
+proc float TimesNumbers(float $num1, float $num2)
+{
+    float $sum;
+    $sum = $num1 * $num2;
+    return $sum;
+}
+
+TimesNumbers(400,60);
+
+proc float DivNumbers(float $num1, float $num2)
+{
+    float $sum;
+    $sum = $num1 / $num2;
+    return $sum;
+}
+
+DivNumbers(400,60);
