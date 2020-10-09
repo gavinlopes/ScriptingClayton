@@ -1,0 +1,31 @@
+proc ColorChange(int $number)
+{
+string $objectArray[];
+int $changeColor = $number;
+$objectArray = `ls -sl`;
+
+//print ($objectArray);
+
+for($control in $objectArray)
+{
+   string $nurbCircleShape[] = `listRelatives -shapes $objectArray`;
+   for($override in $nurbCircleShape)
+   {      
+     setAttr ($override + ".overrideEnabled")(1);
+     setAttr ($override + ".overrideColor")($changeColor);
+   }
+   //print ($nurbCircleShape);  
+}
+}
+
+ColorChange(31);
+
+
+
+
+
+
+
+
+
+    

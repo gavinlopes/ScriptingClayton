@@ -1,0 +1,106 @@
+proc float Add(float $numbers[])
+{
+    float $sum = 0;
+    
+    for ($n in $numbers)
+    {
+        $sum += $n;
+        
+    }
+    
+    return $sum;
+}
+
+Add ({1,2,3,4,5,6});
+
+proc float Sub(float $numbers[])
+{
+    float $sum = 0;
+    
+    for ($n in $numbers)
+    {
+        $sum -= $n;
+        
+    }
+    
+    return $sum;
+}
+
+Sub ({1,2,3,4,5,6});
+
+proc float Times(float $numbers[])
+{
+    float $sum = 0;
+    
+    for ($n in $numbers)
+    {
+        $sum *= $n;
+        
+    }
+    
+    return $sum;
+}
+
+Times ({1,2,3,4,5,6});
+
+proc float Div(float $numbers[])
+{
+    float $sum = 0;
+    
+    for ($n in $numbers)
+    {
+        $sum /= $n;
+        
+    }
+    
+    return $sum;
+}
+
+Div ({1,2,3,4,5,6});
+
+proc float Mode(float $numbers[])
+{
+    float $values[];
+    float $frequency[];
+    
+    for ($i=0; $i<size($numbers); $i++)
+    {
+        if (!floatArrayContains($numbers[$i], $values))
+        {
+            $values[size($values)] = $numbers[$i];
+            $frequency[size($values)] = 1;
+        }
+        else
+        {
+            // values == [3,5,2,87,4,56]
+            // freq   == [1,3,2, 1,1, 1]
+            int $index;
+            $index = floatArrayFind($numbers[$i], 0, $values);
+            $frequency[$index] = $frequency[$index] + 1;
+        }
+    }
+    
+    // Loop through frequency[] to find largest value
+    // Get the index of the said value
+    // Get associated value from $values[]
+    // Return as the mode
+
+    return 1;
+}
+
+proc float Mean(float $numbers[])
+{
+    float $mean = 0;
+    for ($i=0; $i<size($numbers); $i++)
+    {
+        $mean += $numbers[$i];
+    }
+    $mean = $mean / `size($numbers)`;
+    
+    return $mean;
+}
+
+proc float Median(float $numbers[])
+{
+
+}
